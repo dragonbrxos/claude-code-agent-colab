@@ -8,15 +8,20 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "rootDir": "./claude-code-main/src",
+    "rootDir": "./src",
     "resolveJsonModule": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"]
+    }
   },
   "include": [
-    "./claude-code-main/src/**/*.ts",
-    "./claude-code-main/src/**/*.tsx"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }
