@@ -10,12 +10,27 @@ Este repositório contém uma versão adaptada do **Claude Code Agent** para rod
    - **Célula 2**: Baixa o modelo `llama3:8b`.
    - **Célula 3**: Prepara o ambiente e inicia o agente.
 
-## 🧹 Instalação Limpa (Manual)
+## 🧹 Instalação e Execução (Bloco Único)
 
-Se você já clonou o repositório e deseja garantir que está usando a versão mais recente com todas as correções, execute este comando em uma célula de código antes de clonar novamente:
+Se você quiser rodar tudo em uma única célula de código no Colab, copie e cole o bloco abaixo:
 
 ```bash
+# 1. Limpar instalação antiga e clonar a nova versão
 !rm -rf claude-code-agent-colab
+!git clone https://github.com/dragonbrxos/claude-code-agent-colab.git
+
+# 2. Configurar ambiente para 100% de compatibilidade
+import os
+os.environ['ANTHROPIC_BASE_URL'] = 'http://localhost:11434/v1'
+os.environ['ANTHROPIC_API_KEY'] = 'ollama-key'
+os.environ['CLAUDE_CODE_SIMPLE'] = '1'
+os.environ['DISABLE_TELEMETRY'] = '1'
+os.environ['FORCE_COLOR'] = '1'
+os.environ['TERM'] = 'xterm-256color'
+os.environ['NODE_OPTIONS'] = '--max-old-space-size=4096'
+
+# 3. Instalar dependências, fazer o build e iniciar o agente
+!cd claude-code-agent-colab && npm install --no-audit --no-fund --quiet && npm run build && npm start
 ```
 
 ## 🛠️ O que foi adaptado?
