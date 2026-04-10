@@ -27,6 +27,10 @@ export function isFirstPartyAnthropicBaseUrl(): boolean {
   if (!baseUrl) {
     return true
   }
+  // Allow Ollama/Localhost for Colab
+  if (baseUrl.includes('localhost') || baseUrl.includes('127.0.0.1')) {
+    return true
+  }
   try {
     const host = new URL(baseUrl).host
     const allowedHosts = ['api.anthropic.com']

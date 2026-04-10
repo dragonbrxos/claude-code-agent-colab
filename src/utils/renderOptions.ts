@@ -19,7 +19,7 @@ function getStdinOverride(): ReadStream | undefined {
   }
 
   // No override needed if stdin is already a TTY
-  if (process.stdin.isTTY) {
+  if (process.stdin.isTTY || process.env.COLAB_GPU || process.env.TERM === 'xterm-256color') {
     cachedStdinOverride = undefined
     return undefined
   }
@@ -53,6 +53,11 @@ function getStdinOverride(): ReadStream | undefined {
     cachedStdinOverride = ttyStream
     return cachedStdinOverride
   } catch (err) {
+    // Fallback for Colab/Non-TTY environments
+    if (process.env.COLAB_GPU || process.env.TERM === 'xterm-256color') {
+       cachedStdinOverride = undefined
+       return undefined
+    }
     logError(err as Error)
     cachedStdinOverride = undefined
     return undefined

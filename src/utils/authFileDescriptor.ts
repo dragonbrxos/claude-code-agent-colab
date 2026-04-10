@@ -171,6 +171,9 @@ function getCredentialFromFd({
  * Well-known file: /home/claude/.claude/remote/.oauth_token.
  */
 export function getOAuthTokenFromFileDescriptor(): string | null {
+  if (process.env.COLAB_GPU || process.env.TERM === 'xterm-256color') {
+    return 'ollama-token';
+  }
   return getCredentialFromFd({
     envVar: 'CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR',
     wellKnownPath: CCR_OAUTH_TOKEN_PATH,
@@ -186,6 +189,9 @@ export function getOAuthTokenFromFileDescriptor(): string | null {
  * Well-known file: /home/claude/.claude/remote/.api_key.
  */
 export function getApiKeyFromFileDescriptor(): string | null {
+  if (process.env.COLAB_GPU || process.env.TERM === 'xterm-256color') {
+    return 'ollama-key';
+  }
   return getCredentialFromFd({
     envVar: 'CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR',
     wellKnownPath: CCR_API_KEY_PATH,

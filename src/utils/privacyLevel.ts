@@ -18,6 +18,10 @@
 type PrivacyLevel = 'default' | 'no-telemetry' | 'essential-traffic'
 
 export function getPrivacyLevel(): PrivacyLevel {
+  // Force essential-traffic only for Colab to ensure stability and privacy
+  if (process.env.COLAB_GPU || process.env.TERM === 'xterm-256color') {
+    return 'essential-traffic'
+  }
   if (process.env.CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC) {
     return 'essential-traffic'
   }
