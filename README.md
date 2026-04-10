@@ -20,21 +20,20 @@ Você pode abrir o notebook `claude_code_colab_agent.ipynb` diretamente no Googl
 
 1.  **Instalação + Servidor Ollama:**
     ```bash
-    apt-get update -y && apt-get install -y zstd curl
-    curl -fsSL https://ollama.com/install.sh | sh
-    nohup /usr/local/bin/ollama serve > ollama.log 2>&1 &
+    !apt-get update -y && !apt-get install -y zstd curl
+    !curl -fsSL https://ollama.com/install.sh | sh
+    !nohup /usr/local/bin/ollama serve > ollama.log 2>&1 &
     ```
 
 2.  **Baixar o Modelo:**
     ```bash
-    ollama pull llama3:8b
+    !ollama pull llama3:8b
     ```
 
 3.  **Preparar o Agente:**
     ```bash
-    git clone https://github.com/dragonbrxos/claude-code-agent-colab.git
-    cd claude-code-agent-colab
-    npm install && npm run build
+    !git clone https://github.com/dragonbrxos/claude-code-agent-colab.git
+    !cd claude-code-agent-colab && npm install && npm run build
     ```
 
 4.  **Configurar e Rodar:**
@@ -43,7 +42,7 @@ Você pode abrir o notebook `claude_code_colab_agent.ipynb` diretamente no Googl
     os.environ['ANTHROPIC_BASE_URL'] = 'http://localhost:11434/v1'
     os.environ['ANTHROPIC_API_KEY'] = 'ollama'
     os.environ['CLAUDE_MODEL'] = 'llama3:8b'
-    # Executar: node dist/main.js
+    # Executar: !cd claude-code-agent-colab && node dist/main.js
     ```
 
 ---
