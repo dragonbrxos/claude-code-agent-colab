@@ -5,7 +5,7 @@
   "main": "dist/main.js",
   "scripts": {
     "build": "tsc --skipLibCheck true --noEmit false || true",
-    "start": "node dist/main.js"
+    "start": "node --max-old-space-size=4096 dist/main.js"
   },
   "keywords": [
     "claude-code",
