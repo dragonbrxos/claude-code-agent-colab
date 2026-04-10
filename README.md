@@ -20,15 +20,17 @@ Você pode abrir o notebook `claude_code_colab_agent.ipynb` diretamente no Googl
 
 1.  **Instalação + Servidor Ollama:**
     ```bash
-    !apt-get update -y && !apt-get install -y zstd curl
-    !curl -fsSL https://ollama.com/install.sh | sh
-    !nohup /usr/local/bin/ollama serve > ollama.log 2>&1 &
+    %%bash
+    apt-get update -y && apt-get install -y zstd curl
+    curl -fsSL https://ollama.com/install.sh | sh
+    nohup /usr/local/bin/ollama serve > ollama.log 2>&1 &
     ```
 
 2.  **Preparar o Agente:**
     ```bash
-    !git clone https://github.com/dragonbrxos/claude-code-agent-colab.git
-    !cd claude-code-agent-colab && npm install && npm run build
+    %%bash
+    git clone https://github.com/dragonbrxos/claude-code-agent-colab.git
+    cd claude-code-agent-colab && npm install && npm run build
     ```
 
 3.  **Configurar o Modelo (Funções Python):**
