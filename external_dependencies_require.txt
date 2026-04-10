@@ -1,0 +1,9 @@
+/home/ubuntu/claude-code-main/claude-code-main/src/components/ContextVisualization.tsx:../services/contextCollapse/index.js
+/home/ubuntu/claude-code-main/claude-code-main/src/components/Message.tsx:../services/compact/snipCompact.js
+/home/ubuntu/claude-code-main/claude-code-main/src/components/Message.tsx:../services/compact/snipProjection.js
+/home/ubuntu/claude-code-main/claude-code-main/src/components/Message.tsx:./messages/SnipBoundaryMessage.js
+/home/ubuntu/claude-code-main/claude-code-main/src/components/TokenWarning.tsx:../services/contextCollapse/index.js
+/home/ubuntu/claude-code-main/claude-code-main/src/components/messages/UserTextMessage.tsx:./UserChannelMessage.js
+/home/ubuntu/claude-code-main/claude-code-main/src/components/messages/UserTextMessage.tsx:./UserCrossSessionMessage.js
+/home/ubuntu/claude-code-main/claude-code-main/src/components/messages/UserTextMessage.tsx:./UserForkBoilerplateMessage.js
+/home/ubuntu/claude-code-main/claude-code-main/src/components/messages/UserTextMessage.tsx:./UserGitHubWebhookMessage.js

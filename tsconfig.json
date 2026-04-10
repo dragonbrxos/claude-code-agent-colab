@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonjs",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./claude-code-main/src",
+    "resolveJsonModule": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "./claude-code-main/src/**/*.ts",
+    "./claude-code-main/src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
