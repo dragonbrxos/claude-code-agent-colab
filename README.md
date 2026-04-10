@@ -1,6 +1,6 @@
-# 🚀 Claude Code Agent no Google Colab com Ollama (Llama3:8b)
+# 🚀 Claude Code Agent no Google Colab com Ollama
 
-Este repositório contém uma adaptação para executar o **Claude Code** (código vazado) como um agente de IA no Google Colab, utilizando o modelo **Llama3:8b** através do **Ollama** de forma direta e gratuita.
+Este repositório contém uma adaptação para executar o **Claude Code** (código vazado) como um agente de IA no Google Colab, utilizando o **Ollama** de forma direta e gratuita.
 
 ---
 
@@ -25,33 +25,34 @@ Você pode abrir o notebook `claude_code_colab_agent.ipynb` diretamente no Googl
     !nohup /usr/local/bin/ollama serve > ollama.log 2>&1 &
     ```
 
-2.  **Baixar o Modelo:**
-    ```bash
-    !ollama pull llama3:8b
-    ```
-
-3.  **Preparar o Agente:**
+2.  **Preparar o Agente:**
     ```bash
     !git clone https://github.com/dragonbrxos/claude-code-agent-colab.git
     !cd claude-code-agent-colab && npm install && npm run build
     ```
 
-4.  **Configurar e Rodar:**
+3.  **Configurar o Modelo (Funções Python):**
+    Agora você pode escolher entre o modelo padrão ou um customizado:
     ```python
-    import os
-    os.environ['ANTHROPIC_BASE_URL'] = 'http://localhost:11434/v1'
-    os.environ['ANTHROPIC_API_KEY'] = 'ollama'
-    os.environ['CLAUDE_MODEL'] = 'llama3:8b'
-    # Executar: !cd claude-code-agent-colab && node dist/main.js
+    # Para o modelo padrão (Llama3:8b):
+    configurar_modelo_padrao()
+
+    # Para qualquer outro modelo (ex: mistral, llama3.1, etc):
+    configurar_modelo_customizado("mistral")
+    ```
+
+4.  **Rodar o Agente:**
+    ```bash
+    !cd claude-code-agent-colab && node dist/main.js
     ```
 
 ---
 
 ## 💡 Vantagens desta Versão
 
+*   **Flexibilidade:** Alterne entre modelos facilmente usando funções Python.
 *   **Simplicidade:** Sem necessidade de configurar o Bifrost ou proxies complexos.
 *   **Estabilidade:** Utiliza o método de instalação oficial do Ollama que funciona perfeitamente no ambiente do Colab.
-*   **Performance:** Conexão direta reduz a latência entre o agente e o modelo.
 
 ---
 
