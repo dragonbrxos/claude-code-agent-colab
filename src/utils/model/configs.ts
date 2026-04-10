@@ -84,7 +84,15 @@ export const CLAUDE_SONNET_4_6_CONFIG = {
 } as const satisfies ModelConfig
 
 // @[MODEL LAUNCH]: Register the new config here.
+export const LLAMA3_8B_CONFIG = {
+  firstParty: 'llama3:8b',
+  bedrock: 'llama3:8b',
+  vertex: 'llama3:8b',
+  foundry: 'llama3:8b',
+} as const satisfies ModelConfig
+
 export const ALL_MODEL_CONFIGS = {
+  llama3: LLAMA3_8B_CONFIG,
   haiku35: CLAUDE_3_5_HAIKU_CONFIG,
   haiku45: CLAUDE_HAIKU_4_5_CONFIG,
   sonnet35: CLAUDE_3_5_V2_SONNET_CONFIG,
