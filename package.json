@@ -1,10 +1,10 @@
 {
   "name": "claude-code-agent-colab",
   "version": "1.0.0",
-  "description": "Adapted Claude Code for Google Colab with free LLM via Bifrost and Ollama",
+  "description": "Adapted Claude Code for Google Colab with free LLM via Ollama",
   "main": "dist/main.js",
   "scripts": {
-    "build": "tsc --noEmit false --skipLibCheck true || true",
+    "build": "tsc --skipLibCheck true --noEmit false || true",
     "start": "node dist/main.js"
   },
   "keywords": [
@@ -12,7 +12,6 @@
     "ai-agent",
     "colab",
     "ollama",
-    "bifrost",
     "llama3",
     "free-llm"
   ],
@@ -54,7 +53,7 @@
     "picomatch": "^2.0.0",
     "proper-lockfile": "^4.0.0",
     "qrcode": "^1.0.0",
-    "react": "^18.0.0",
+    "react": "^18.2.0",
     "react-reconciler": "^0.29.0",
     "semver": "^7.0.0",
     "shell-quote": "^1.0.0",
@@ -73,6 +72,8 @@
     "zod": "^3.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.3.3",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0"
   }
 }
